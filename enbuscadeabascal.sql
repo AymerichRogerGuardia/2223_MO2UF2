@@ -74,6 +74,51 @@ VALUES ("Obsidiana", "000000", 40),
 	("Carne", "ffff00", 5),
 	("Pana", "ffdddd", 50)
 
+SELECT weapon.id_weaponm weapons.weapon, materials.id_material, materials.material
+FROM weapons, materials, weapons_materails
+WHERE materials.id_material = weapons_materials.id_material
+AND weapons.id_weapon = weapons_materials.id_weapon;
+
+
+
+INSERT INTO weapons_types (type, description, icon)
+VALUES ("Melee", "Cuerpo a cuerpo", "melee.png"), 
+("Range", "Distancia", "range.png"), 
+("Magical", "Magia potagia", "magic.png"),
+("Divine", "Es divino", "divine.png");
+
+
+CREATE TABLE characters (
+	id_character INT UNSIGNED NOT NULL,
+	name VARCHAR(32) NOT NULL,
+	
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS weapons_materials;
+DROP TABLE IF EXISTS armours_materials;
+
+DROP TABLE IF EXISTS materials;
+
+DROP TABLE IF EXISTS characters_weapons;
+DROP TABLE IF EXISTS characters_armours;
+DROP TABLE IF EXISTS characters_items;
+
+DROP TABLE IF EXISTS weapons;
+DROP TABLE IF EXISTS armours;
+DROP TABLE IF EXISTS items;
+
+DROP TABLE IF EXISTS weapons_types;
+DROP TABLE IF EXISTS armours_types;
+DROP TABLE IF EXISTS items_types;
+
+DROP TABLE IF EXISTS stats;
+
+DROP TABLE IF EXISTS characters;
+
+
+
+
 
 
 
